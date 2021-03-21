@@ -24,9 +24,8 @@ export default function PasswordReset() {
       setMessage("Check your email for reset instructions");
     } catch {
       setError("Failed to reset password");
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
   return (

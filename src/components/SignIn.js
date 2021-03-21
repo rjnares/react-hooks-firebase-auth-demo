@@ -24,9 +24,8 @@ export default function SignIn() {
       history.push("/");
     } catch {
       setError("Failed to sign in to account");
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
   return (

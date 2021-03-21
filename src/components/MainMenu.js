@@ -7,16 +7,19 @@ import { useAuth } from "../contexts/AuthContext";
 
 export default function MainMenu() {
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const { currentUser, signOut } = useAuth();
   const history = useHistory();
 
   async function handleSignOut() {
     try {
       setError("");
+      setLoading(true);
       await signOut();
       history.push("/sign-in");
     } catch {
       setError("Failed to sign out of account");
+      setLoading(false);
     }
   }
 
@@ -33,7 +36,7 @@ export default function MainMenu() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleSignOut}>
+        <Button disabled={loading} variant="link" onClick={handleSignOut}>
           Sign Out
         </Button>
       </div>
