@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AuthContainer from "./AuthContainer";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
@@ -24,7 +25,7 @@ export default function MainMenu() {
   }
 
   return (
-    <React.Fragment>
+    <AuthContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Main Menu</h2>
@@ -40,6 +41,6 @@ export default function MainMenu() {
           Sign Out
         </Button>
       </div>
-    </React.Fragment>
+    </AuthContainer>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import AuthContainer from "./AuthContainer";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -29,7 +30,7 @@ export default function PasswordReset() {
   }
 
   return (
-    <React.Fragment>
+    <AuthContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>
@@ -52,6 +53,6 @@ export default function PasswordReset() {
       <div className="w-100 text-center mt-2">
         Need an account? <Link to="/sign-up">Sign Up</Link>
       </div>
-    </React.Fragment>
+    </AuthContainer>
   );
 }

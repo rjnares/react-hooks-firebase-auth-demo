@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import PasswordReset from "./PasswordReset";
@@ -16,24 +15,17 @@ import {
 
 export default function App() {
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Router>
-          <AuthProvider>
-            <Switch>
-              <PrivateRoute exact path="/" component={MainMenu} />
-              <PrivateRoute path="/update-account" component={UpdateAccount} />
-              <Route path="/sign-up" component={SignUp} />
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/password-reset" component={PasswordReset} />
-              <Redirect from="*" to="/" />
-            </Switch>
-          </AuthProvider>
-        </Router>
-      </div>
-    </Container>
+    <Router>
+      <AuthProvider>
+        <Switch>
+          <PrivateRoute exact path="/" component={MainMenu} />
+          <PrivateRoute path="/update-account" component={UpdateAccount} />
+          <Route path="/sign-up" component={SignUp} />
+          <Route path="/sign-in" component={SignIn} />
+          <Route path="/password-reset" component={PasswordReset} />
+          <Redirect from="*" to="/" />
+        </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
